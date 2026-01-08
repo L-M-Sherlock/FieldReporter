@@ -1,6 +1,7 @@
 ## General Notes
 * To disable one function off this addon remove the config group (for example remove "add_frequencies" if you don't want to add the option to prefill frequencies)
 * Config won't work with default options, make sure to look at it and change things for your card types
+* `auto_process_on_start` - when true, FieldReporter automatically reorders cards and converts fields to tags when Anki launches; set to false if you only want to run those via the Tools menu entries
 
 ## Auto Sort Cards based on Field
 * `search_to_sort` - a search query for the cards to update, these will start at position 0

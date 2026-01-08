@@ -9,6 +9,9 @@ from .field_sort import reorder_cards
 from .field_to_tag import add_tags
 from .add_frequencies import populate_frequency
 
+config = mw.addonManager.getConfig(__name__)
+AUTO_PROCESS_ON_START = config.get("auto_process_on_start", True)
+
 # Run in background logic
 def success_tooltip(out) -> tooltip:
     try:
@@ -31,9 +34,10 @@ def run_in_background(func):
 
     return run
 
-# Process cards on start
-gui_hooks.main_window_did_init.append(run_in_background(reorder_cards))
-gui_hooks.main_window_did_init.append(run_in_background(add_tags))
+# Process cards on start (optional)
+if AUTO_PROCESS_ON_START:
+    gui_hooks.main_window_did_init.append(run_in_background(reorder_cards))
+    gui_hooks.main_window_did_init.append(run_in_background(add_tags))
 
 # Menu entries for each action
 add_frequency_action = QAction("Add Missing Card Frequencies", mw)

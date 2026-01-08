@@ -1,4 +1,5 @@
 {
+    "auto_process_on_start": true,
     "add_frequencies": {
         "frequency_list_path": "C:/Users/kamwi/Development/Projects/FieldReporter/term_meta_bank_1.json",
         "word_field": "Word",
