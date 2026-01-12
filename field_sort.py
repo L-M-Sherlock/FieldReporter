@@ -42,5 +42,5 @@ def reorder_cards(col: Collection) -> None:
         return col.sched.reposition_new_cards(
             card_ids=sorted_card_ids,
             starting_from=0, step_size=1,
-            randomize=False, shift_existing=True
+            randomize=False, shift_existing=False
         )
